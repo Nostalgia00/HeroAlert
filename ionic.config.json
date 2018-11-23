@@ -1,0 +1,7 @@
+{
+  "name": "HeroAlert",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
