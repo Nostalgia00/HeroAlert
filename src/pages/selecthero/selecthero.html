@@ -1,0 +1,87 @@
+<!--
+  Generated template for the SelectheroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+      Select a Hero
+    </ion-title>
+  </ion-navbar>
+
+<!--For selecting tabs -->
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="hero">
+      <ion-segment-button value="heroes">
+        Heroes
+      </ion-segment-button>
+      <ion-segment-button value="antiheroes">
+        Anti-Heroes
+      </ion-segment-button>
+      <ion-segment-button value="teams">
+        Teams
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div [ngSwitch]="hero">
+    <!--Hero tab -->
+    <ion-list *ngSwitchCase="'heroes'">    
+      <!--Hero list -->
+        <ion-item *ngFor="let hero of ourHeroList$ | async" 
+        detail-push navPush="DisplayheroPage" 
+          [navParams]="{heroRecord:hero, ourAtt1:EmAtt1, ourAtt2:EmAtt2, ourAtt3:EmAtt3, emergencyLevel:emergencyDangerLevel}">
+          <h2>{{hero.heroName}}</h2>    
+        </ion-item>
+      <!--Add Hero button -->
+        <ion-buttons start>
+          <button navPush="AddHeroPage" ion-button>
+            <ion-icon name="add" ></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-list>
+
+    <!--AntiHero tab -->
+    <ion-list *ngSwitchCase="'antiheroes'">  
+      <!--AntiHero list -->  
+        <ion-item *ngFor="let antihero of ourAntiHeroList$ | async" 
+        detail-push navPush="DisplayheroPage" 
+          [navParams]="{antiheroRecord:antihero, ourAtt1:EmAtt1, ourAtt2:EmAtt2, ourAtt3:EmAtt3}">
+          <h2>{{antihero.antiheroName}}</h2>    
+        </ion-item>
+      <!--Add antiHero button -->
+        <ion-buttons start>
+          <button navPush="AddAntiHeroPage" ion-button>
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-list>
+    
+    <!--Teams tab -->
+    <ion-list *ngSwitchCase="'teams'">  
+      <!--Team list -->  
+        <ion-item *ngFor="let team of ourTeamList$ | async" 
+        detail-push navPush="DisplayheroPage" 
+          [navParams]="{teamRecord:team, ourAtt1:EmAtt1, ourAtt2:EmAtt2, ourAtt3:EmAtt3}">
+          <h2>{{team.teamName}}</h2>    
+        </ion-item>
+      <!--Add Team button -->
+        <ion-buttons start>
+          <button navPush="AddTeamPage" ion-button>
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-list>
+  </div>
+  <br>
+</ion-content>
+<ion-footer>
+  <button ion-button block (click)="goToHome()">
+      Go back to start
+    </button>
+</ion-footer>

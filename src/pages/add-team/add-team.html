@@ -1,0 +1,40 @@
+<!--
+  Generated template for the AddStudentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color = "primary">
+    <ion-title>Add Team</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <ion-item>
+	<ion-label>Team Name</ion-label>
+	<ion-input [(ngModel)]="teamRecord.teamName"placeholder="Team Name Default">
+	</ion-input>
+ </ion-item>
+ <ion-item>
+	<ion-label>attribute1</ion-label>
+	<ion-input [(ngModel)]="teamRecord.attribute1" placeholder="null">
+	</ion-input>
+ </ion-item>
+  <ion-item>
+	<ion-label>attribute2</ion-label>
+	<ion-input [(ngModel)]="teamRecord.attribute2" placeholder="null">
+	</ion-input>
+ </ion-item>
+  <ion-item>
+	<ion-label>attribute3</ion-label>
+	<ion-input [(ngModel)]="teamRecord.attribute3" placeholder="null">
+	</ion-input>
+ </ion-item>
+
+<button ion-button block (click)="addTeamFromScreen(teamRecord)">Add Team</button>
+ 
+</ion-content>
