@@ -28,7 +28,7 @@
     "firebase": "^5.7.0",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.13.1",
     "polyfill": "^0.1.0",
     "promise": "^8.0.2",
     "promise-polyfill": "^8.1.0",
